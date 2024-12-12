@@ -1,4 +1,4 @@
-# Programa-conveercer-de-unidades-em-linguagem-C
+# Programa-converter-de-unidades-em-linguagem-C
 
 # atividade 1
 
