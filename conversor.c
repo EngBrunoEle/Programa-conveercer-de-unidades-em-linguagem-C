@@ -24,7 +24,28 @@ double temperatura(double valor, char* de, char* para) {
 
 
 double velocidade(double valor, char* de, char* para) {
-    // Conversões de velocidade
+    if (strcmp(de, "m/s") == 0 && strcmp(para, "km/h") == 0) {
+        return valor * 3.6; 
+    } 
+    else if (strcmp(de, "m/s") == 0 && strcmp(para, "mph") == 0) {
+        return valor * 2.23694; 
+    }
+    else if (strcmp(de, "km/h") == 0 && strcmp(para, "m/s") == 0) {
+        return valor / 3.6; // 
+    }
+    else if (strcmp(de, "km/h") == 0 && strcmp(para, "mph") == 0) {
+        return valor / 1.60934; 
+    }
+    else if (strcmp(de, "mph") == 0 && strcmp(para, "m/s") == 0) {
+        return valor / 2.23694; 
+    }
+    else if (strcmp(de, "mph") == 0 && strcmp(para, "km/h") == 0) {
+        return valor * 1.60934; 
+    }
+    else {
+        printf("Conversão não suportada.\n");
+        return -1; 
+    }
 }
 
 
