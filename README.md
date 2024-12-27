@@ -83,3 +83,4 @@ Contribuições são bem-vindas! Se você deseja adicionar novos recursos, corri
 ## Licença
 
 Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
