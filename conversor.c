@@ -1,111 +1,61 @@
 #include <stdio.h>
 
-// Funções de conversão
 
-
-double comprimento(double valor, char* de, char* para) {
-    // Conversões de comprimento
+float conver_metros_centimetros(float metros){  /*conversor de metros para centimetros*/
+   return metros*100;
 }
 
 
-double massa(double valor, char* de, char* para) {
-    // Conversões de massa
+float conver_centimetros_metros(float centimetros){ /*conversor de centimetros para metros*/
+    return centimetros/100;
 }
 
 
-double volume(double valor, char* de, char* para) {
-    // Conversões de volume
+float conver_metros_milimetros(float metros){  /*conversor de metros para milimetros*/
+    return metros*1000;
 }
 
 
-double temperatura(double valor, char* de, char* para) {
-// Conversões de temperatura
+float conver_milimetros_metros(float milimetros){ /*conversor de milimetros para metros*/
+    return milimetros/1000;
 }
 
 
-double velocidade(double valor, char* de, char* para) {
-    if (strcmp(de, "m/s") == 0 && strcmp(para, "km/h") == 0) {
-        return valor * 3.6; 
-    } 
-    else if (strcmp(de, "m/s") == 0 && strcmp(para, "mph") == 0) {
-        return valor * 2.23694; 
-    }
-    else if (strcmp(de, "km/h") == 0 && strcmp(para, "m/s") == 0) {
-        return valor / 3.6; // 
-    }
-    else if (strcmp(de, "km/h") == 0 && strcmp(para, "mph") == 0) {
-        return valor / 1.60934; 
-    }
-    else if (strcmp(de, "mph") == 0 && strcmp(para, "m/s") == 0) {
-        return valor / 2.23694; 
-    }
-    else if (strcmp(de, "mph") == 0 && strcmp(para, "km/h") == 0) {
-        return valor * 1.60934; 
-    }
-    else {
-        printf("Conversão não suportada.\n");
-        return -1; 
-    }
+float conver_milimetros_centimetros(float milimetros){  /*conversor de milimetros para centimetros*/
+    return milimetros/10;
 }
 
 
-double potencia(double valor, char* de, char* para) {
-    // Conversões de potência
+float conver_centimetros_milimetros(float centimetros){ /*conversor de centimetros para milimetros*/
+    return centimetros*10;
 }
 
 
-double area(double valor, char* de, char* para) {
-    // Conversões de área
+int main(){ /*principal*/
+
+
+/*resultados das conversoes*/
+float resultMetCent = conver_metros_centimetros(5);
+printf("Conversao de metros para centimetros %.2f\n", resultMetCent);  
+
+
+float resultCentMet = conver_centimetros_metros(20);
+printf("Conversao de centimetros para metros %.2f\n", resultCentMet);  
+
+
+float resultMetMili = conver_metros_milimetros(3);
+printf("Conversao de metros para milimetros %.2f\n", resultMetMili);  
+
+
+float resultMiliMetros = conver_milimetros_metros(10);
+printf("Conversao de milimetros para metros %.2f\n", resultMiliMetros);  
+
+
+float resultMiliCent = conver_milimetros_centimetros(15);
+printf("Conversao de milimetros para centimetros %.2f\n", resultMiliCent);  
+
+
+float resultCentMili = conver_centimetros_milimetros(30);
+printf("Conversao de centimetros para milimetros %.2f\n", resultCentMili);  
+return 0;  
 }
-
-int main() {
-    double valor;
-    int sel; 
-    char de[50], para[50];
-
-    // Menu de categorias
-    printf("Escolha a categoria de conversao:\n");
-    printf("1.Comprimento 2.Massa 3.Volume 4.Temperatura 5.Velocidade 6.Potencia 7.Area: ");
-    scanf("%d", &sel);
-    
-    printf("Digite o valor para conversao: ");
-    scanf("%lf", &valor);
-
-    printf("Digite a unidade de origem: ");
-    scanf("%s", de);
-
-    printf("Digite a unidade de destino: ");
-    scanf("%s", para);
-
-    switch(sel) {
-        case 1: 
-            printf("Resultado da conversao: %.2f\n", comprimento(valor, de, para));
-            break;
-        case 2: 
-            printf("Resultado da conversao: %.2f\n", massa(valor, de, para));
-            break;
-        case 3: 
-            printf("Resultado da conversao: %.2f\n", volume(valor, de, para));
-            break;
-        case 4: 
-            printf("Resultado da conversao: %.2f\n", temperatura(valor, de, para));
-            break;
-        case 5: 
-            printf("Resultado da conversao: %.2f\n", velocidade(valor, de, para));
-            break;
-        case 6: 
-            printf("Resultado da conversao: %.2f\n", potencia(valor, de, para));
-            break;
-        case 7:
-            printf("Resultado da conversao: %.2f\n", area(valor, de, para));
-            break;
-        default:
-            printf("Categoria invalida!\n");
-            break;
-    }
-
-
-    return 0;
-}
-
-
